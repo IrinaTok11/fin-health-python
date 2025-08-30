@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<base href="./"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>
+    Financial Summary — Python
+    </title>
+<meta content="#52837B" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="./assets/css/portfolio.css" rel="stylesheet"/>
+<meta content="Decision-ready financial health dashboard: 12 KPIs with norms and risk flags." name="description"/>
+<meta content="Financial Health — Power BI" property="og:title"/>
+<meta content="Decision-ready financial health dashboard: 12 KPIs with norms and risk flags." property="og:description"/>
+<meta content="summary" name="twitter:card"/>
+</head>
+<body>
+<input class="nav-toggle" hidden="" id="nav-toggle" type="checkbox"/>
+<nav class="topnav">
+<div class="wrap navwrap">
+<a class="brand" href="index.html#top">
+        Irina Tokmianina
+        </a>
+<div class="navlinks">
+<a href="#highlights">
+          HIGHLIGHTS
+          </a>
+<a href="#variants">
+          VARIANTS
+          </a>
+<a href="#screenshots">
+          SCREENSHOTS
+          </a>
+<a href="#techstack">
+          TECH STACK
+          </a>
+<a href="methodology.html">
+          METHODOLOGY
+          </a>
+<a href="#links">
+          LINKS
+          </a>
+<a class="contact" href="#contact">
+          CONTACT
+          </a>
+</div>
+</div>
+</nav>
+<a id="top">
+</a>
+<header class="hero hero--green">
+<base href="./"/>
+<div class="wrap">
+<h1>
+          Financial Summary — Python
+        </h1>
+<p class="lead">Automation that rebuilds the Excel Summary (12 KPIs) and generates a Word report section — deterministic, repeatable output every run</p>
+<div class="cta-row">
+<a class="btn" href="https://github.com/IrinaTok11/fin-health-python" rel="noopener" target="_blank">
+          Repository
+          </a>
+<a class="btn outline" href="index.html#quick-start">
+          Quick start
+          </a>
+</div>
+</div>
+<label class="hamburger" for="nav-toggle">
+<svg aria-hidden="true" height="28" viewbox="0 0 24 24" width="28">
+      \1"currentColor" stroke-linecap="round" stroke-width="2" /&gt;
+      </svg>
+</label>
+</header>
+<section class="summary-band section section--gray">
+<div class="wrap">
+<h2 class="summary-title">
+          Python file summary
+        </h2>
+<p class="summary-text">
+          This isn’t a demo or a bundle of screenshots. It’s a Python routine that runs from an Excel workbook: using the supplied inputs, the Summary sheet compiles a table of twelve key ratios over three years; trends are calculated, the latest period is set against the first, and each result is checked against its norm. The script then produces a Word report in a standard financial-analysis layout – a tidy table with norms, brief notes on movements and a clear conclusion. What’s shown here is a small public excerpt from a much deeper analysis, shared to convey the method and standard of the work.
+        </p>
+</div>
+</section>
+<nav aria-label="Mobile" class="mobile-drawer" hidden="" id="mobile-menu">
+<ul class="mobile-list">
+<li>
+<a href="#highlights">
+          Highlights
+          </a>
+</li>
+<li>
+<a href="#variants">
+          Variants
+          </a>
+</li>
+<li>
+<a href="#screenshots">
+          Screenshots
+          </a>
+</li>
+<li>
+<a href="methodology.html">
+          Tech Stack
+          </a>
+</li>
+<li>
+<a href="#links">
+          Links
+          </a>
+</li>
+<li>
+<a href="#contact">
+          Contact
+          </a>
+</li>
+</ul>
+</nav>
+<div class="backdrop" hidden="">
+</div>
+<section class="section section section--white" id="why-different">
+<div class="wrap wide article">
+<h2>
+          Why this project is different
+        </h2>
+<ul>
+<li>
+            Deterministic pipeline: same numbers on every run (audit‑friendly)
+          </li>
+<li>
+            Templated Word report section (Jinja2 for text placeholders, python-docx for document assembly)
+          </li>
+<li>
+            Defensive KPI rules and norm bands — a stable methodology, not “magic”
+          </li>
+<li>
+            Drop‑in reuse: a new Excel with the same mapping yields the same outputs
+          </li>
+</ul>
+<p class="muted">
+          Deterministic outputs • Templated Word report section • Defensive KPI rules • Drop‑in reuse across datasets
+        </p>
+</div>
+</section>
+<section class="section section section--gray" id="audience">
+<div class="wrap wide article">
+<h2>
+          Who uses this
+        </h2>
+<ul class="facts"><li><strong>Executive teams and finance leads</strong> — decision-ready view of the 12 KPIs</li><li><strong>Finance analysts</strong> — standardise a portfolio of KPIs</li><li><strong>BI teams</strong> — guarantee the same numbers across Excel, Power BI and Word</li><li><strong>Insolvency and restructuring professionals</strong> — licensed insolvency practitioners (administrators, liquidators, CVA supervisors) and turnaround advisers; reproducible exhibits for formal papers</li></ul>
+</div>
+</section>
+<section class="section section section--white" id="limitations">
+<div class="wrap wide article">
+<h2>
+          Limitations and not a fit
+        </h2>
+<ul>
+<li>
+            Requires a structured Excel template (sheet names and layout are expected)
+          </li>
+<li>
+            Current narrative focuses on ratios (easily extensible to other topics)
+          </li>
+</ul>
+</div>
+</section>
+<section class="section section--gray" id="highlights">
+<div class="wrap wide">
+<h2>
+          Highlights
+        </h2>
+<ul class="facts">
+<li>
+<strong>
+            One-click run:
+            </strong>
+            Summary (Excel) + Word report section generated together.
+          </li>
+<li>
+<strong>
+            Excel Summary (12 KPIs):
+            </strong>
+            liquidity, financial stability, and profitability — with trend arrows and YoY change.
+          </li>
+<li>
+<strong>
+            Word report section (4 KPIs):
+            </strong>
+            cash ratio, current ratio, quick ratio, months to repay — table + narrative.
+          </li>
+<li>
+<strong>
+            Consistent formatting:
+            </strong>
+            fonts, paddings, widths, captions, spacing — no manual polishing.
+          </li>
+</ul>
+</div>
+</section>
+<section class="section section--white" id="variants">
+<div class="wrap wide">
+<h2>
+          Word variants
+        </h2>
+<ul class="facts">
+<li>
+<strong>
+            Option 1 — v1 (Python only):
+            </strong>
+            section as generated by the script (table + narrative).
+          </li>
+<li>
+<strong>
+            Option 2 — v2 (Python + Power BI visuals):
+            </strong>
+<em>
+            same numbers
+            </em>
+            , but with selected charts embedded for portfolio presentation.
+          </li>
+</ul>
+<p>
+<strong>
+          Why Word v2?
+          </strong>
+          For the portfolio we embed clean charts captured from the companion Power BI dashboard (Page 2 — v2, flat/print).
+        </p>
+<p>
+          For a similar interpretation in Power BI — interactive dashboarding and print‑friendly report visuals from the same dataset — see:
+          <a href="https://irinatok11.github.io/fin-health-power-bi/" rel="noopener" target="_blank">
+          live page
+          </a>
+          ·
+          <a href="https://github.com/IrinaTok11/fin-health-power-bi" rel="noopener" target="_blank">
+          repository
+          </a>
+</p>
+</div>
+</section>
+<section class="section section--gray" id="screenshots">
+<a id="screens">
+</a>
+<div class="wrap wide">
+<h2>
+          What you get
+        </h2>
+<h3>
+          Summary — before → after
+        </h3>
+<div class="gallery two-col">
+<figure>
+<img alt="Summary sheet — empty/initial" src="assets/00_summary_before.png"/>
+<figcaption>
+              Summary — empty/initial
+            </figcaption>
+</figure>
+<figure>
+<img alt="Summary sheet — generated &amp; formatted" src="assets/01_summary_after.png"/>
+<figcaption>
+              Summary — generated &amp; formatted
+            </figcaption>
+</figure>
+</div><p class="muted">The numbers shown are anonymised; the workflow is real.</p>
+<hr class="sep"/>
+<h3>
+          Option 1 — Word
+        </h3>
+<div class="gallery two-col">
+<figure>
+<img alt="Word report section — page 1 (Python only)" src="assets/02_word_v1_page1.png"/>
+<figcaption>
+              Word report section — page 1 (Python only)
+            </figcaption>
+</figure>
+<figure>
+<img alt="Word report section — page 2 (Python only)" src="assets/03_word_v1_page2.png"/>
+<figcaption>
+              Word report section — page 2 (Python only)
+            </figcaption>
+</figure>
+</div>
+<hr class="sep"/>
+<h3>
+          Option 2 — Word
+        </h3>
+<div class="gallery two-col">
+<figure>
+<img alt="Word report section — page 1 (with Power BI visuals)" src="assets/04_word_v2_page1.png"/>
+<figcaption>
+              Word report section — page 1 (with Power BI visuals)
+            </figcaption>
+</figure>
+<figure>
+<img alt="Word report section — page 2 (with Power BI visuals)" src="assets/05_word_v2_page2.png"/>
+<figcaption>
+              Word report section — page 2 (with Power BI visuals)
+            </figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="section section--white" id="techstack">
+<div class="wrap wide">
+<h2>
+          Tech stack and run
+        </h2>
+<ul class="facts">
+<li>
+<strong>
+            Python:
+            </strong>
+            3.11+
+          </li>
+<li>
+<strong>
+            Libraries:
+            </strong>
+            pandas, openpyxl/xlrd, jinja2, python-docx, matplotlib
+          </li>
+<li>
+<strong>
+            Build:
+            </strong>
+            static GitHub Pages; optional GitHub Actions for auto-regeneration
+          </li>
+<li>
+<strong>
+            Data:
+            </strong>
+            anonymised Excel sample; generated Word report section
+          </li>
+</ul>
+<a id="quick-start">
+</a>
+<h3 id="quick-start">
+          How to run
+        </h3>
+<div class="codebox" data-code="">
+<div class="codebox__hd">
+<span class="codebox__title">
+            Shell
+            </span>
+<button class="codebox__btn" data-copy="" type="button">
+            Copy
+            </button>
+</div>
+<pre>
+          <code>
+          cd run
+          python -m venv .venv
+          # Windows:
+          .venv\Scripts\activate
+          # macOS/Linux:
+          source .venv/bin/activate
+          # Install &amp; run:
+          pip install -r ../requirements.txt
+          python summary.py
+          </code>
+          </pre>
+</div>
+<p>
+          Result: the workbook in run/ gets its Summary sheet rebuilt, and the file analysis_of_liquidity_ratios.docx appears in run/.
+        </p>
+</div>
+</section>
+<section class="section section--gray" id="links">
+<div class="wrap wide">
+<h2>
+          Links
+        </h2>
+<ul class="facts">
+<li>
+<strong>
+            Repository:
+            </strong>
+<a href="https://github.com/IrinaTok11/fin-health-python" rel="noopener" target="_blank">
+            github.com/IrinaTok11/fin-health-python
+            </a>
+</li>
+<li>
+<strong>
+            Methodology:
+            </strong>
+<a href="methodology.html">
+            Methodology page
+            </a>
+</li>
+<li>
+<strong>
+            Architecture:
+            </strong>
+<a href="https://github.com/IrinaTok11/fin-health-python/blob/main/docs/reference/architecture.md" rel="noopener" target="_blank">
+            overview (GitHub)
+            </a>
+</li>
+<li>
+<strong>
+            KPI catalogueue:
+            </strong>
+<a href="https://github.com/IrinaTok11/fin-health-python/blob/main/docs/reference/kpi_catalog.md" rel="noopener" target="_blank">
+            table (GitHub)
+            </a>
+</li>
+<li>
+<strong>
+            Case study:
+            </strong>
+<a href="https://github.com/IrinaTok11/fin-health-python/blob/main/docs/reference/case_study.md" rel="noopener" target="_blank">
+            narrative (GitHub)
+            </a>
+</li>
+<li>
+<strong>
+            Power BI portfolio:
+            </strong>
+<a href="https://irinatok11.github.io/fin-health-power-bi/" rel="noopener" target="_blank">
+            live page
+            </a>
+            ·
+            <a href="https://github.com/IrinaTok11/fin-health-power-bi" rel="noopener" target="_blank">
+            repository
+            </a>
+</li>
+</ul>
+</div>
+</section>
+<section class="section section--white" id="privacy">
+<div class="wrap wide">
+<h2>
+          Data and privacy
+        </h2>
+<p>
+          This portfolio case uses anonymised sample data. No client-identifying information is included.
+        </p>
+</div>
+</section>
+<section class="contact-band" id="contact">
+<div class="wrap">
+<h2 class="contact-title">
+          Get in touch
+        </h2>
+<p class="contact-sub">
+          Connect on LinkedIn, explore projects on GitHub, or send an email
+        </p>
+<div class="contact-icons">
+<a aria-label="LinkedIn" class="icon-circle" href="https://www.linkedin.com/in/tokmianina" rel="noopener" target="_blank">
+<svg fill="var(--green)" height="28" viewbox="0 0 448 512" width="28" xmlns="http://www.w3.org/2000/svg">
+<path d="M100.28 448H7.4V148.9h92.88zm-46.44-341a53.67 53.67 0 1 1 53.67-53.67 53.67 53.67 0 0 1-53.67 53.67zM447.9 448h-92.4V302.4c0-34.7-12.5-58.4-43.6-58.4-23.8 0-38 16-44.3 31.4-2.3 5.6-2.9 13.4-2.9 21.3V448h-92.4s1.2-267.1 0-295.1h92.4v41.8c12.3-19 34.3-45.9 83.6-45.9 61 0 106.6 39.8 106.6 125.2z">
+</path>
+</svg>
+</a>
+<a aria-label="Email" class="icon-circle" href="mailto:irinatokmianina@gmail.com">
+<svg fill="white" height="28" viewbox="0 0 16 16" width="28" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v.217l-8 4.8-8-4.8V4z">
+</path>
+<path d="M0 6.383v5.617a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6.383l-7.555 4.533a.5.5 0 0 1-.89 0L0 6.383z">
+</path>
+</svg>
+</a>
+<a aria-label="GitHub" class="icon-circle" href="https://github.com/IrinaTok11" rel="noopener" target="_blank">
+<svg fill="white" height="28" viewbox="0 0 16 16" width="28" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+           0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+           -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+           0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 4 0c1.53-1.03
+           2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+           0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+</path>
+</svg>
+</a>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="wrap">
+<p class="legal">
+          MIT licence  •  Updated Aug 2025  •  © Irina Tokmianina  •  Financial / BI Analyst
+        </p>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){var t=document.getElementById('menu-toggle');document.querySelectorAll('.mobile-menu a').forEach(function(a){a.addEventListener('click',function(){if(t)t.checked=false;});});});
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){var t=document.getElementById('menu-toggle');var label=document.querySelector('label.hamburger');var overlay=document.querySelector('.mobile-overlay');function setAria(x){if(label){label.setAttribute('aria-expanded',x?'true':'false');}}function close(){if(t){t.checked=false;}document.body.classList.remove('menu-open');setAria(false);}if(t){t.addEventListener('change',function(){var on=t.checked;document.body.classList.toggle('menu-open',on);setAria(on);});}document.querySelectorAll('.mobile-menu a').forEach(function(a){a.addEventListener('click',close);});if(overlay){overlay.addEventListener('click',close);}document.addEventListener('keydown',function(e){if(e.key==='Escape'){close();}});});
+    </script>
+<script>
+    // copy-to-clipboard for .codebox with fallback
+    document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-copy]');
+    if(!btn) return;
+    var box = btn.closest('[data-code]');
+    var pre = box ? box.querySelector('pre') : null;
+    var text = pre ? pre.innerText : '';
+    function onCopied(){
+    var prev = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function(){ btn.textContent = prev; }, 1400);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(onCopied).catch(function(){
+    // fallback
+    var ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta); onCopied();
+    });
+    } else {
+    var ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta); onCopied();
+    }
+    });
+    </script>
+<script>
+    document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href$="index.html#quick-start"],a[href="#quick-start"]');
+    if(!a) return;
+    const t = document.getElementById('quick-start');
+    if(!t) return;
+    e.preventDefault();
+    t.scrollIntoView({behavior:'smooth', block:'start'});
+    try{ history.replaceState(null,'','index.html#quick-start'); }catch(_){}
+    });
+    </script>
+</body>
+</html>
