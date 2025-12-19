@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17979580.svg)](https://doi.org/10.5281/zenodo.17979580)
+
 # Financial summary automation (Excel → Word)
 
 An opinionated, production‑style automation for real financial reports. Give it a standard Excel workbook and it will rebuild the **Summary** sheet (twelve core ratios across three years, with norms and deltas) and write a ready‑to‑paste **Word** section for the report — clean table, short narrative, and risk flags. No screenshots, no hand‑tweaking: the same result, every time. This repository shows a small public slice of a deeper client workflow; numbers are anonymised — the method is the point.
