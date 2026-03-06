@@ -31,7 +31,6 @@ from docx.enum.table import WD_TABLE_ALIGNMENT, WD_ALIGN_VERTICAL
 from docx.oxml.ns import qn, nsdecls
 from docx.oxml import OxmlElement, parse_xml
 
-
 # ============================================================================
 # Configuration
 # ============================================================================
@@ -53,7 +52,6 @@ WORD_OUTPUT_NAME = "3.2_analysis_of_liquidity_ratios.docx"
 WORD_TITLE = "3.2 Analysis of liquidity ratios"
 WORD_TABLE_CAPTION = "Table 3.2.1: Liquidity ratios, {y0}–{y2}"
 
-
 # ============================================================================
 # Utilities
 # ============================================================================
@@ -62,7 +60,6 @@ def fail(msg: str) -> None:
     print(msg, file=sys.stderr)
     sys.exit(1)
 
-
 def ensure_single_xlsx_in_cwd() -> str:
     data_dir = os.getcwd()
     files = [f for f in os.listdir(data_dir) if f.endswith(".xlsx") and not f.startswith("~$")]
@@ -70,16 +67,13 @@ def ensure_single_xlsx_in_cwd() -> str:
         fail(f"Please ensure exactly one .xlsx file is present. Found: {files}")
     return os.path.join(data_dir, files[0])
 
-
 def set_calibri_font(run) -> None:
     run.font.name = DEFAULT_FONT_NAME
     rFonts = run._element.rPr.get_or_add_rFonts()
     rFonts.set(qn("w:eastAsia"), DEFAULT_FONT_NAME)
 
-
 def safe_float_to_str(val) -> str:
     return f"{val:.2f}" if isinstance(val, float) else str(val)
-
 
 # ============================================================================
 # Excel reading and calculations
@@ -88,7 +82,6 @@ def safe_float_to_str(val) -> str:
 def read_sheet_names(xlsx_path: str) -> List[str]:
     xls = pd.ExcelFile(xlsx_path)
     return xls.sheet_names
-
 
 def resolve_sheet_name(requested_key: str, available: List[str]) -> str:
     if requested_key in available:
@@ -108,7 +101,6 @@ def load_parameters(xlsx_path: str, params_sheet: str) -> Dict[str, float]:
         fail(f"Parameters sheet '{params_sheet}' must have 'Parameter' and 'Value' columns.")
     return dict(zip(df["Parameter"], df["Value"]))
 
-
 def load_years(xlsx_path: str, years_sheet: str) -> List[int]:
     df = pd.read_excel(xlsx_path, sheet_name=years_sheet)
     if df.shape[1] < 1:
@@ -120,7 +112,6 @@ def load_years(xlsx_path: str, years_sheet: str) -> List[int]:
     if len(years) < 3:
         fail("Expected at least three years (e.g., 2021–2023).")
     return years
-
 
 def read_fin_table(xlsx_path: str, sheet_name: str, years: List[int]) -> pd.DataFrame:
     df = pd.read_excel(xlsx_path, sheet_name=sheet_name, header=0)
@@ -137,14 +128,12 @@ def read_fin_table(xlsx_path: str, sheet_name: str, years: List[int]) -> pd.Data
         df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0.0)
     return df.set_index("Variable")
 
-
 def series_trend_and_change(series: pd.Series) -> Tuple[str, float]:
     s0, sN = series.iloc[0], series.iloc[-1]
     if s0 is None or sN is None or isnan(s0) or isnan(sN):
         return "→", 0.0
     arrow = "↑" if sN > s0 else "↓" if sN < s0 else "→"
     return arrow, round(float(sN) - float(s0), 2)
-
 
 def compute_ratios(inc: pd.DataFrame, bal: pd.DataFrame, years: List[int], months_per_year: float) -> pd.DataFrame:
     """
@@ -218,7 +207,6 @@ def compute_ratios(inc: pd.DataFrame, bal: pd.DataFrame, years: List[int], month
 
     return df
 
-
 def build_summary_table(df_ratios: pd.DataFrame, years: List[int], ratio_norms: pd.DataFrame) -> pd.DataFrame:
     rn = ratio_norms.set_index("ratio_key")
     percent_metrics = {"Equity ratio","ROA","ROE","Net profit margin","EBITDA margin"}
@@ -265,7 +253,6 @@ def build_summary_table(df_ratios: pd.DataFrame, years: List[int], ratio_norms: 
         out = pd.concat([out, pd.DataFrame([row])], ignore_index=True)
 
     return out
-
 
 # ============================================================================
 # Excel writing & formatting
@@ -326,7 +313,6 @@ def write_summary_sheet(xlsx_path: str, summary_df: pd.DataFrame, summary_sheet_
 
     wb.save(xlsx_path)
 
-
 # ============================================================================
 # Word report
 # ============================================================================
@@ -377,7 +363,6 @@ def metrics_metadata(years: List[int]):
             ),
         },
     }
-
 
 def write_word_report(
     output_dir: str,
@@ -461,7 +446,6 @@ def write_word_report(
             tblPr.remove(tblInd)
     except Exception:
         pass
-
 
     hdr = table.rows[0].cells
     hdr[0].text = "Metric"
@@ -605,7 +589,6 @@ def write_word_report(
         peak_val = float('nan')
         peak_year = years[0]
     # --- Narrative paragraphs (bold metric names, full third metric name) ---
-
 
     # Dynamic phrase for Cash ratio relative to 0.2–0.5 range
     cash_min, cash_max = (min(cash_vals), max(cash_vals)) if cash_vals else (float('nan'), float('nan'))
@@ -820,7 +803,6 @@ def write_word_report(
     doc.save(out_path)
     return out_path
 
-
 # ============================================================================
 # Main
 # ============================================================================
@@ -855,7 +837,5 @@ def main() -> None:
     print("✔ Summary sheet updated and styled.")
     print(f"✔ Word report created: {word_path}")
 
-
 if __name__ == "__main__":
     main()
-
