@@ -7,7 +7,7 @@ An opinionated, production‑style automation for real financial reports. Give i
 
 **Live page:** https://irinatok11.github.io/fin-health-python/
 
-![Pipeline overview — input Excel, calculated ratios, generated Word section](docs/assets/pipeline_overview.jpg)
+![Pipeline overview — input Excel, calculated ratios, generated Word section](docs/assets/pipeline_overview.png)
 
 ---
 
